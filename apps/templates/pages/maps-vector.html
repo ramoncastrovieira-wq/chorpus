@@ -1,0 +1,113 @@
+{% set title='Vector Maps' %}
+
+{% extends "layouts/vertical.html" %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-header border-0 border-bottom border-dashed">
+                    <h4 class="header-title">World Vector Map</h4>
+                </div>
+                <div class="card-body">
+                    <div id="world-map-markers" style="height: 360px"></div>
+                </div> <!-- end card-body-->
+            </div> <!-- card end -->
+        </div>
+
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-header border-0 border-bottom border-dashed">
+                    <h4 class="header-title">World Vector Map</h4>
+                </div>
+                <div class="card-body">
+                    <div id="world-map-markers-line" style="height: 360px"></div>
+                </div> <!-- end card-body-->
+            </div> <!-- card end -->
+        </div>
+
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-header border-0 border-bottom border-dashed">
+                    <h4 class="header-title">India Vector Map</h4>
+                </div>
+                <div class="card-body">
+                    <div id="india-vector-map" style="height: 360px"></div>
+                </div> <!-- end card-body-->
+            </div> <!-- card end -->
+        </div>
+
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-header border-0 border-bottom border-dashed">
+                    <h4 class="header-title">Canada Vector Map</h4>
+                </div>
+                <div class="card-body">
+                    <div id="canada-vector-map" style="height: 360px"></div>
+                </div> <!-- end card-body-->
+            </div> <!-- card end -->
+        </div>
+
+
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-header border-0 border-bottom border-dashed">
+                    <h4 class="header-title">Russia Vector Map</h4>
+                </div>
+                <div class="card-body">
+                    <div id="russia-vector-map" style="height: 360px"></div>
+                </div> <!-- end card-body-->
+            </div> <!-- card end -->
+        </div>
+
+
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-header border-0 border-bottom border-dashed">
+                    <h4 class="header-title">US Vector Map</h4>
+                </div>
+                <div class="card-body">
+                    <div id="usa-vector-map" style="height: 360px"></div>
+                </div> <!-- end card-body-->
+            </div> <!-- card end -->
+        </div>
+
+
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-header border-0 border-bottom border-dashed">
+                    <h4 class="header-title">Iraq Vector Map</h4>
+                </div>
+                <div class="card-body">
+                    <div id="iraq-vector-map" style="height: 360px"></div>
+                </div> <!-- end card-body-->
+            </div> <!-- card end -->
+        </div>
+
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-header border-0 border-bottom border-dashed">
+                    <h4 class="header-title">Spain Vector Map</h4>
+                </div>
+                <div class="card-body">
+                    <div id="spain-vector-map" style="height: 360px"></div>
+                </div> <!-- end card-body-->
+            </div> <!-- card end -->
+        </div>
+    </div>
+    <!-- end row -->
+{% endblock %}
+
+{% block scripts %}
+    <script src="{{ config.ASSETS_ROOT }}/js/maps/in-mill-en.js"></script>
+    <script src="{{ config.ASSETS_ROOT }}/js/maps/canada.js"></script>
+    <script src="{{ config.ASSETS_ROOT }}/js/maps/iraq.js"></script>
+    <script src="{{ config.ASSETS_ROOT }}/js/maps/russia.js"></script>
+    <script src="{{ config.ASSETS_ROOT }}/js/maps/spain.js"></script>
+    <script src="{{ config.ASSETS_ROOT }}/js/maps/us-aea-en.js"></script>
+    <script src="{{ config.ASSETS_ROOT }}/js/maps/us-lcc-en.js"></script>
+    <script src="{{ config.ASSETS_ROOT }}/js/maps/us-mill-en.js"></script>
+
+    <!-- Vector Map Demo js-->
+    <script src="{{ config.ASSETS_ROOT }}/js/components/maps-vector.js"></script>
+{% endblock %}

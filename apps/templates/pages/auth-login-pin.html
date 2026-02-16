@@ -1,0 +1,61 @@
+{% set title='Login with Pin' %}
+
+{% extends "layouts/base.html" %}
+
+{% block body_attributes %}
+    class="h-100"
+{% endblock %}
+
+{% block page_content %}
+    <div class="auth-bg d-flex min-vh-100">
+        <div class="row g-0 justify-content-center w-100 m-xxl-5 px-xxl-4 m-3">
+            <div class="col-xxl-3 col-lg-5 col-md-6">
+                <a href="/index" class="auth-brand d-flex justify-content-center mb-2">
+                    <img src="{{ config.ASSETS_ROOT }}/images/logo-dark.png" alt="dark logo" height="26"
+                         class="logo-dark">
+                    <img src="{{ config.ASSETS_ROOT }}/images/logo.png" alt="logo light" height="26" class="logo-light">
+                </a>
+
+                <p class="fw-semibold mb-4 text-center text-muted fs-15">Admin Panel Design by Coderthemes</p>
+
+                <div class="card overflow-hidden text-center p-xxl-4 p-3 mb-0">
+                    <h4 class="fw-semibold mb-2 fs-20">Login with PIN</h4>
+
+                    <p class="text-muted mb-4">We sent you a code, please enter it below to verify <br/>your number
+                        <span class="link-dark fs-13 fw-medium">+ (12) 345-678-912</span>
+                    </p>
+
+                    <form action="/index" class="text-start mb-3">
+                        <label class="form-label" for="code">Enter 6 Digit Code</label>
+
+                        <div class="d-flex gap-2 mt-1 mb-3">
+                            <input type="text" maxlength="1" class="form-control text-center">
+                            <input type="text" maxlength="1" class="form-control text-center">
+                            <input type="text" maxlength="1" class="form-control text-center">
+                            <input type="text" maxlength="1" class="form-control text-center">
+                            <input type="text" maxlength="1" class="form-control text-center">
+                            <input type="text" maxlength="1" class="form-control text-center">
+                        </div>
+
+                        <div class="mb-3 d-grid">
+                            <button class="btn btn-primary fw-semibold" type="submit">Continue</button>
+                        </div>
+                        <p class="mb-0 text-center">Don't received code yet? <a href="#!"
+                                                                                class="link-primary fw-semibold text-decoration-underline">Send
+                            again</a></p>
+                    </form>
+
+                    <p class="text-muted fs-14 mb-0">Back To <a href="/index"
+                                                                class="fw-semibold text-danger ms-1">Home!</a></p>
+
+                </div>
+
+                <p class="mt-4 text-center mb-0">
+                    <script>document.write(new Date().getFullYear())</script>
+                    © Adminto - By <span
+                        class="fw-bold text-decoration-underline text-uppercase text-reset fs-12">Coderthemes</span>
+                </p>
+            </div>
+        </div>
+    </div>
+{% endblock %}

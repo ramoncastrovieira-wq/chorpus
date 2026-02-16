@@ -1,0 +1,42 @@
+{% set title='Confirm Mail' %}
+
+{% extends "layouts/base.html" %}
+
+{% block body_attributes %}
+    class="h-100"
+{% endblock %}
+
+{% block page_content %}
+    <div class="auth-bg d-flex min-vh-100">
+        <div class="row g-0 justify-content-center w-100 m-xxl-5 px-xxl-4 m-3">
+            <div class="col-xxl-3 col-lg-5 col-md-6">
+                <a href="/index" class="auth-brand d-flex justify-content-center mb-2">
+                    <img src="{{ config.ASSETS_ROOT }}/images/logo-dark.png" alt="dark logo" height="26" class="logo-dark">
+                    <img src="{{ config.ASSETS_ROOT }}/images/logo.png" alt="logo light" height="26" class="logo-light">
+                </a>
+
+                <p class="fw-semibold mb-4 text-center text-muted fs-15">Admin Panel Design by Coderthemes</p>
+
+                <div class="card overflow-hidden text-center p-xxl-4 p-3 mb-0">
+
+                    <h4 class="fw-semibold mb-4 fs-20">Verify Your Account</h4>
+
+                    <img src="{{ config.ASSETS_ROOT }}/images/png/mail-confirm.png" alt="img" width="86" class="mx-auto d-block">
+
+                    <p class="text-muted fs-14 mt-2"> A email has been send to <b>youremail@domain.com</b>.
+                        Please check for an email from company and click on the included link to
+                        reset your password. </p>
+
+                    <a href="/index" class="btn d-block btn-primary mt-3">Back to
+                        Home</a>
+                </div>
+
+                <p class="mt-3 text-center mb-0">
+                    <script>document.write(new Date().getFullYear())</script>
+                    © Adminto - By <span
+                        class="fw-bold text-decoration-underline text-uppercase text-reset fs-12">Coderthemes</span>
+                </p>
+            </div>
+        </div>
+    </div>
+{% endblock %}

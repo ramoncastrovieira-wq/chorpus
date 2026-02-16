@@ -1,0 +1,292 @@
+{% set title='Timeline' %}
+
+{% extends "layouts/vertical.html" %}
+
+{% block content %}
+    <div class="row justify-content-center">
+        <div class="col-xxl-10">
+            <div class="timeline" dir="ltr">
+                <div class="timeline-show mb-3 text-center">
+                    <h5 class="m-0 time-show-name">Today</h5>
+                </div>
+
+                <div class="timeline-lg-item timeline-item-left">
+                    <div class="timeline-desk">
+                        <div class="timeline-box">
+                            <span class="arrow-alt shadow-none"></span>
+                            <span class="timeline-icon avatar-sm">
+                                            <span class="avatar-title bg-light rounded-circle">
+                                                <iconify-icon icon="solar:sticker-smile-circle-2-bold-duotone"
+                                                              class="text-success fs-28"></iconify-icon>
+                                            </span>
+                                        </span>
+                            <div>
+                                <div class="d-flex justify-content-between">
+                                    <h4 class="mb-2 fw-semibold fs-16">Completed UX design project for our client</h4>
+                                    <p class="mb-0 text-muted">1 hr ago</p>
+                                </div>
+                                <p class="mb-1"><i class="ti ti-checks text-success me-1 fs-16"></i>Successfully met
+                                    all project goals and objectives within the stipulated timeline.</p>
+                                <p class="mb-3"><i
+                                        class="ti ti-checks text-success me-1 fs-16"></i>Delivered
+                                    high-quality outputs that meet or exceed the expectations of
+                                    stakeholders.</p>
+
+                                <a href="javascript: void(0);" class="btn btn-sm btn-light">👍 89</a>
+                                <a href="javascript: void(0);" class="btn btn-sm btn-light">❤️ 102</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-lg-item timeline-item-right">
+                    <div class="timeline-desk">
+                        <div class="timeline-box">
+                            <span class="arrow shadow-none"></span>
+                            <span class="timeline-icon avatar-sm">
+                                            <span class="avatar-title bg-light rounded-circle">
+                                                <iconify-icon icon="solar:sticker-smile-circle-2-bold-duotone"
+                                                              class="text-success fs-28"></iconify-icon>
+                                            </span>
+                                        </span>
+
+                            <div class="d-flex align-items-center gap-2">
+                                <img src="{{ config.ASSETS_ROOT }}/images/users/avatar-10.jpg" alt=""
+                                     class="avatar-lg rounded-circle border border-light border-2">
+                                <div>
+                                    <p class="fw-medium fs-15 mb-0">Sara Johnson</p>
+                                    <p class="mb-0 text-muted">srajhnson@yeti.com</p>
+                                </div>
+                                <div class="ms-auto">
+                                    <p class="mb-0 text-muted">2hr Ago</p>
+                                </div>
+                            </div>
+                            <h4 class="my-3 fw-semibold fs-16">Join as a full stack developer</h4>
+                            <div class="mb-2">
+                                            <span
+                                                    class="badge text-bg-light fw-medium px-2 py-1 fs-12">html</span>
+                                <span
+                                        class="badge text-bg-light fw-medium px-2 py-1 fs-12">CSS</span>
+                                <span
+                                        class="badge text-bg-light fw-medium px-2 py-1 fs-12">JavaScript</span>
+                                <span
+                                        class="badge text-bg-light fw-medium px-2 py-1 fs-12">NodeJS</span>
+                                <span
+                                        class="badge text-bg-light fw-medium px-2 py-1 fs-12">ExpressJS</span>
+                                <span
+                                        class="badge text-bg-light fw-medium px-2 py-1 fs-12">ExpressJS</span>
+                                <span
+                                        class="badge text-bg-light fw-medium px-2 py-1 fs-12">Django</span>
+                                <span
+                                        class="badge text-bg-light fw-medium px-2 py-1 fs-12">MySQL</span>
+                                <span
+                                        class="badge text-bg-light fw-medium px-2 py-1 fs-12 my-1">PostgreSQL</span>
+                            </div>
+
+
+                            <a href="javascript: void(0);" class="btn btn-sm btn-light">🎉 19</a>
+                            <a href="javascript: void(0);" class="btn btn-sm btn-light">🎆 8</a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="timeline-lg-item timeline-item-left">
+                    <div class="timeline-desk">
+                        <div class="timeline-box">
+                            <span class="arrow-alt shadow-none"></span>
+                            <span class="timeline-icon avatar-sm">
+                                            <span class="avatar-title bg-light rounded-circle">
+                                                <iconify-icon icon="solar:sticker-smile-circle-2-bold-duotone"
+                                                              class="text-success fs-28"></iconify-icon>
+                                            </span>
+                                        </span>
+                            <div>
+                                <div class="d-flex justify-content-between">
+                                    <h4 class="mb-2 fw-semibold fs-16">Started Standing Meeting in Morning!</h4>
+                                    <p class="mb-0 text-muted">29 Jan, 2025</p>
+                                </div>
+                                <div class="d-flex flex-wrap align-items-center my-1 gap-1">
+                                    <div class="avatar-group">
+                                        <div class="avatar">
+                                            <img src="{{ config.ASSETS_ROOT }}/images/users/avatar-4.jpg" alt=""
+                                                 class="rounded-circle avatar-sm">
+                                        </div>
+                                        <div class="avatar">
+                                            <img src="{{ config.ASSETS_ROOT }}/images/users/avatar-5.jpg" alt=""
+                                                 class="rounded-circle avatar-sm">
+                                        </div>
+                                        <div class="avatar">
+                                            <img src="{{ config.ASSETS_ROOT }}/images/users/avatar-6.jpg" alt=""
+                                                 class="rounded-circle avatar-sm">
+                                        </div>
+                                        <div class="avatar">
+                                            <img src="{{ config.ASSETS_ROOT }}/images/users/avatar-7.jpg" alt=""
+                                                 class="rounded-circle avatar-sm">
+                                        </div>
+                                        <div class="avatar">
+                                            <div class="avatar-sm">
+                                                            <span
+                                                                    class="avatar-title text-bg-dark fs-18 rounded-circle">
+                                                                <i class="ti ti-plus"></i>
+                                                            </span>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <p class="mb-0 ms-1 fs-14">+23 Employee Join Meeting </p>
+                                </div>
+                                <p class="mb-0 mt-3 fw-semibold">Topic : <span
+                                        class="text-muted fw-medium">New project and admin dashboard</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-lg-item timeline-item-right">
+                    <div class="timeline-desk">
+                        <div class="timeline-box">
+                            <span class="arrow shadow-none"></span>
+                            <span class="timeline-icon avatar-sm">
+                                            <span class="avatar-title bg-light rounded-circle">
+                                                <iconify-icon icon="solar:sticker-smile-circle-2-bold-duotone"
+                                                              class="text-success fs-28"></iconify-icon>
+                                            </span>
+                                        </span>
+                            <div>
+                                <div class="d-flex align-items-center justify-content-between mb-2">
+                                    <h4 class="mb-0 fw-semibold fs-16"> New Admin Release in Bootstrap
+                                        <span
+                                                class="badge bg-success-subtle text-success px-2 py-1 fs-11 ms-1">New
+                                                        Release</span></h4>
+                                    <p class="mb-0 text-muted">3hr Ago</p>
+                                </div>
+                                <p>Get started with our company of web components and interactive elements
+                                    built on top of Bootstrap.</p>
+                                <div class="timeline-album mb-3">
+                                    <a href="javascript: void(0);">
+                                        <img src="{{ config.ASSETS_ROOT }}/images/small/small-7.jpg" alt="" class="rounded-3">
+                                    </a>
+                                    <a href="javascript: void(0);">
+                                        <img src="{{ config.ASSETS_ROOT }}/images/small/small-4.jpg" alt="" class="rounded-3">
+                                    </a>
+                                    <a href="javascript: void(0);">
+                                        <img src="{{ config.ASSETS_ROOT }}/images/small/small-1.jpg" alt="" class="rounded-3">
+                                    </a>
+                                    <a href="javascript: void(0);">
+                                        <img src="{{ config.ASSETS_ROOT }}/images/small/small-2.jpg" alt="" class="rounded-3">
+                                    </a>
+                                </div>
+                                <a href="#!" class="btn btn-primary btn-sm">Show More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-lg-item timeline-item-left">
+                    <div class="timeline-desk">
+                        <div class="timeline-box">
+                            <span class="arrow-alt shadow-none"></span>
+                            <span class="timeline-icon avatar-sm">
+                                            <span class="avatar-title bg-light rounded-circle">
+                                                <iconify-icon icon="solar:sticker-smile-circle-2-bold-duotone"
+                                                              class="text-success fs-28"></iconify-icon>
+                                            </span>
+                                        </span>
+                            <div>
+                                <div class="d-flex align-items-center gap-2 mb-3">
+                                    <img src="{{ config.ASSETS_ROOT }}/images/users/avatar-5.jpg" alt=""
+                                         class="avatar-lg rounded-circle border border-light border-2">
+                                    <div>
+                                        <h4 class="fw-semibold fs-16 mb-1"> Assigned to serve as the project's
+                                            director</h4>
+                                        <span class="text-muted"><small>by <a href="#!"
+                                                                              class="link-dark text-decoration-underline">John N. Ward.</a></small></span>
+                                    </div>
+                                    <div class="ms-auto">
+                                        <p class="mb-0 text-muted">3hr Ago</p>
+                                    </div>
+                                </div>
+                                <p class="mb-0">I've come across your posts and found some favorable deals
+                                    on your page. I've added a load of products to the cart and I don't know
+                                    the payment options you avail. Also, can you enlighten me about any
+                                    discount</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="timeline-show my-3 text-center">
+                    <h5 class="m-0 time-show-name">Yesterday</h5>
+                </div>
+
+
+                <div class="timeline-lg-item timeline-item-right">
+                    <div class="timeline-desk">
+                        <div class="timeline-box">
+                            <span class="arrow shadow-none"></span>
+                            <span class="timeline-icon avatar-sm">
+                                            <span class="avatar-title bg-light rounded-circle">
+                                                <iconify-icon icon="solar:sticker-smile-circle-2-bold-duotone"
+                                                              class="text-success fs-28"></iconify-icon>
+                                            </span>
+                                        </span>
+                            <div>
+                                <div class="d-flex align-items-center justify-content-between mb-2">
+                                    <h4 class="mb-0 fs-16 fw-semibold"> We have achieved 5.6k sales in
+                                        our themes.</h4>
+                                    <p class="mb-0 text-muted">1day Ago</p>
+                                </div>
+                                <p class="mb-3">As we celebrate this achievement, we remain focused on our
+                                    mission to deliver top-notch themes that meet the evolving needs of our
+                                    users. We are excited about the future and are dedicated to reaching new
+                                    heights, expanding our offerings, and maintaining the high standards
+                                    that have earned us this success</p>
+
+                                <a href="javascript: void(0);" class="btn btn-sm btn-light">👍 1.4k</a>
+                                <a href="javascript: void(0);" class="btn btn-sm btn-light">🎉 2k</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-lg-item timeline-item-left">
+                    <div class="timeline-desk">
+                        <div class="timeline-box">
+                            <span class="arrow-alt shadow-none"></span>
+                            <span class="timeline-icon avatar-sm">
+                                            <span class="avatar-title bg-light rounded-circle">
+                                                <iconify-icon icon="solar:sticker-smile-circle-2-bold-duotone"
+                                                              class="text-success fs-28"></iconify-icon>
+                                            </span>
+                                        </span>
+                            <div>
+                                <div class="d-flex align-items-center gap-2">
+                                    <div class="avatar-lg">
+                                                    <span class="avatar-title bg-light rounded-circle">
+                                                        <iconify-icon icon="solar:monitor-bold"
+                                                                      class="text-primary fs-28"></iconify-icon>
+                                                    </span>
+                                    </div>
+                                    <div>
+                                        <h4 class="mb-0 fs-16 fw-semibold"> Website Launched</h4>
+                                        <p class="text-muted fw-medium fs-14 mt-1 mb-0"> Name : Admin Template</p>
+                                    </div>
+                                </div>
+                                <p class="mb-0 mt-2">Creating a simple Bootstrap website involves using the
+                                    Bootstrap framework to style and layout your HTML content. </p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- end timeline -->
+
+            </div> <!-- end col -->
+        </div>
+        <!-- end row -->
+
+    </div> <!-- container -->
+{% endblock %}

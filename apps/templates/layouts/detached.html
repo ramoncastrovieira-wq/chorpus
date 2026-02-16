@@ -1,0 +1,37 @@
+{% extends "layouts/base.html" %}
+
+{% block html_attributes %}
+    data-layout-mode="detached"
+    data-bs-theme="{% if dark %}dark{% else %}light{% endif %}"
+    data-layout-mode="{% if boxed %}boxed{% else %}fluid{% endif %}"
+    data-menu-color="{% if menu == "light" %}light{% else %}dark{% endif %}"
+    data-sidenav-size="{% if full %}full{% elif fullscreen %}fullscreen{% elif hover %}sm-hover{% elif compact %}compact{% elif icon %}condensed{% else %}default{% endif %}"
+{% endblock %}
+
+{% block styles %}{% endblock %}
+
+{% block page_content %}
+
+    {% block preloader %}{% endblock %}
+
+    <div class="wrapper">
+
+        {% include 'partials/topbar.html' %}
+        {% include 'partials/sidenav.html' %}
+
+        <div class="page-content">
+            <div class="page-container">
+
+                {% block content %}{% endblock %}
+
+            </div>
+
+            {% include 'partials/footer.html' %}
+        </div>
+    </div>
+    {% block modal %}{% endblock %}
+    {% include 'partials/customizer.html' %}
+
+{% endblock %}
+
+{% block scripts %}{% endblock %}

@@ -1,0 +1,113 @@
+//
+// _theme-default.scss
+//
+
+// Google Font Family
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --#{$prefix}logo-lg-height: 22px;
+    --#{$prefix}logo-sm-height: 28px;
+
+    --#{$prefix}sidenav-width: 245px;
+    --#{$prefix}sidenav-width-md: 160px;
+    --#{$prefix}sidenav-width-sm: 80px;
+
+    --#{$prefix}topbar-height: 85px;
+
+    --#{$prefix}menu-item-icon-size: 1.25rem;
+    --#{$prefix}menu-item-font-size: 0.925rem;
+    --#{$prefix}menu-link-item-gap: 10px;
+    --#{$prefix}menu-item-padding-x: 15px;
+    --#{$prefix}menu-item-padding-y: 8px;
+    --#{$prefix}menu-item-item-gap: 2px;
+
+    // theme dark
+    &[data-bs-theme="dark"] {
+        --#{$prefix}light: #37394d;
+        --#{$prefix}light-rgb: #{to-rgb(#37394d)};
+        --#{$prefix}dark: #f1f1f1;
+        --#{$prefix}dark-rgb: #{to-rgb(#f1f1f1)};
+        --#{$prefix}box-shadow: #{0px 0px 35px 0px rgba(26, 27, 34, 0.5)};
+    }
+}
+
+:root {
+
+    // Background Light left-sidebar
+    &[data-menu-color="light"] {
+        --#{$prefix}menu-bg: #{$white};
+        --#{$prefix}menu-item-color: #{$gray-700};
+        --#{$prefix}menu-item-hover-color: #{$primary};
+        --#{$prefix}menu-item-hover-bg: #{rgba($primary, 0.1)};
+        --#{$prefix}menu-item-active-color: #{$primary};
+        --#{$prefix}menu-item-active-bg: transparent;
+        --#{$prefix}sidenav-user-bg: #f6fafd;
+    }
+
+    // Dark Left Sidebar
+    &[data-menu-color="dark"] {
+        --#{$prefix}menu-bg: #252630;
+        --#{$prefix}menu-item-color: #97aac1;
+        --#{$prefix}menu-item-hover-color: #e2eeff;
+        --#{$prefix}menu-item-hover-bg: #252631;
+        --#{$prefix}menu-item-active-color: #e2eeff;
+        --#{$prefix}menu-item-active-bg: #252631;
+        --#{$prefix}sidenav-user-bg: #252630;
+    }
+
+    // Dark Mode Only
+    // &[data-bs-theme="dark"],
+    &[data-menu-color="dark"][data-bs-theme="dark"] {
+        --#{$prefix}menu-bg: #252631;
+        --#{$prefix}menu-item-color: #97aac1;
+        --#{$prefix}menu-item-hover-color: #e2eeff;
+        --#{$prefix}menu-item-hover-bg: #252630;
+        --#{$prefix}menu-item-active-color: #e2eeff;
+        --#{$prefix}menu-item-active-bg: #252630;
+        --#{$prefix}sidenav-user-bg: #252630;
+    }
+
+    // Brand Menu
+    &[data-menu-color="brand"] {
+        --#{$prefix}menu-bg: #{linear-gradient(135deg, #6379c3 0%, #546ee5 60%)};
+        --#{$prefix}menu-item-color: #cedce4;
+        --#{$prefix}menu-item-hover-color: #ffffff;
+        --#{$prefix}menu-item-hover-bg: rgba(255, 255, 255, 0.1);
+        --#{$prefix}menu-item-active-color: #ffffff;
+        --#{$prefix}menu-item-active-bg: rgba(255, 255, 255, 0.1);
+        --#{$prefix}sidenav-user-bg: #e2eeff;
+    }
+
+    // Light Topbar
+    &[data-topbar-color="light"] {
+        --#{$prefix}topbar-bg: #ffffff;
+        --#{$prefix}topbar-item-color: #{$gray-700};
+        --#{$prefix}topbar-item-hover-color: #{$primary};
+        --#{$prefix}topbar-search-bg: #eaeff3;
+        --#{$prefix}topbar-user-bg: transparent;
+        --#{$prefix}topbar-user-border: transparent;
+    }
+
+
+    // Dark Topbar
+    &[data-topbar-color="dark"],
+    &[data-bs-theme="dark"][data-topbar-color="light"] {
+        --#{$prefix}topbar-bg: #252631;
+        --#{$prefix}topbar-item-color: #aab9ca;
+        --#{$prefix}topbar-item-hover-color: #e4f0ff;
+        --#{$prefix}topbar-search-bg: #373847;
+        --#{$prefix}topbar-user-bg: transparent;
+        --#{$prefix}topbar-user-border: transparent;
+    }
+
+    // Brand Topbar
+    &[data-topbar-color="brand"] {
+        --#{$prefix}topbar-bg: #{$primary};
+        --#{$prefix}topbar-item-color: rgba(255, 255, 255, 0.7);
+        --#{$prefix}topbar-item-hover-color: #ffffff;
+        --#{$prefix}topbar-search-bg: rgba(255, 255, 255, 0.1);
+        --#{$prefix}topbar-user-bg: transparent;
+        --#{$prefix}topbar-user-border: transparent;
+    }
+}

@@ -1,0 +1,34 @@
+{% extends "layouts/base.html" %}
+
+{% block html_attributes %}
+    data-layout="topnav" data-bs-theme="{% if dark %}dark{% else %}light{% endif %}" data-layout-mode="{% if boxed %}
+    boxed{% else %}fluid{% endif %}"
+{% endblock %}
+
+{% block styles %}{% endblock %}
+
+{% block page_content %}
+
+    {% block preloader %}{% endblock %}
+
+    <div class="wrapper">
+
+        {% include 'partials/topbar.html' %}
+        {% include 'partials/horizontal-nav.html' %}
+
+        <div class="page-content">
+            <div class="page-container">
+
+                {% block content %}{% endblock %}
+
+            </div>
+
+            {% include 'partials/footer.html' %}
+        </div>
+    </div>
+    {% block modal %}{% endblock %}
+    {% include 'partials/customizer.html' %}
+
+{% endblock %}
+
+{% block scripts %}{% endblock %}

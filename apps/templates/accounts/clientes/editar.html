@@ -1,0 +1,143 @@
+{% set title='Editar Cliente' if cliente else 'Adicionar Cliente' %}
+
+{% extends "layouts/base.html" %}
+
+{% block page_content %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="header-title">{{ title }}</h4>
+                </div>
+                <div class="card-body">
+                    {% with messages = get_flashed_messages(with_categories=true) %}
+                        {% if messages %}
+                            {% for category, message in messages %}
+                                <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+                                    {{ message }}
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                </div>
+                            {% endfor %}
+                        {% endif %}
+                    {% endwith %}
+
+                    <form method="POST" class="needs-validation" novalidate>
+                        {{ form.hidden_tag() }}
+                        
+                        <div class="mb-3">
+                            {{ form.nome.label(class="form-label") }}
+                            {{ form.nome(class="form-control" + (" is-invalid" if form.nome.errors else ""), placeholder="Nome completo") }}
+                            {% for error in form.nome.errors %}
+                                <div class="invalid-feedback">{{ error }}</div>
+                            {% endfor %}
+                        </div>
+                        
+                        <div class="mb-3">
+                            {{ form.email.label(class="form-label") }}
+                            {{ form.email(class="form-control" + (" is-invalid" if form.email.errors else ""), placeholder="Email") }}
+                            {% for error in form.email.errors %}
+                                <div class="invalid-feedback">{{ error }}</div>
+                            {% endfor %}
+                        </div>
+                        
+                        <div class="mb-3">
+                            {{ form.telefone.label(class="form-label") }}
+                            {{ form.telefone(class="form-control" + (" is-invalid" if form.telefone.errors else ""), placeholder="Telefone") }}
+                            {% for error in form.telefone.errors %}
+                                <div class="invalid-feedback">{{ error }}</div>
+                            {% endfor %}
+                        </div>
+                        
+                        <div class="mb-3">
+                            {{ form.endereco.label(class="form-label") }}
+                            {{ form.endereco(class="form-control" + (" is-invalid" if form.endereco.errors else ""), rows=3, placeholder="Endereço completo") }}
+                            {% for error in form.endereco.errors %}
+                                <div class="invalid-feedback">{{ error }}</div>
+                            {% endfor %}
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="profissao_autocomplete" class="form-label">Profissão</label>
+                            <input type="hidden" name="profissao_id" id="profissao_id" value="{{ form.profissao_id.data }}">
+                            <input type="text" class="form-control" id="profissao_autocomplete" 
+                                placeholder="Digite para buscar..." 
+                                value="{{ cliente.profissao.nome if cliente.profissao else '' }}">
+                            {% for error in form.profissao_id.errors %}
+                                <div class="invalid-feedback">{{ error }}</div>
+                            {% endfor %}
+                        </div>
+                        
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                            <a href="{{ url_for('authentication_blueprint.listar_clientes') }}" class="btn btn-secondary me-md-2">
+                                <i class="mdi mdi-arrow-left"></i> Cancelar
+                            </a>
+                            <button type="submit" class="btn btn-primary">
+                                <i class="mdi mdi-content-save"></i> Salvar
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+// Validação do formulário
+(function() {
+    'use strict';
+    window.addEventListener('load', function() {
+        var forms = document.getElementsByClassName('needs-validation');
+        Array.prototype.filter.call(forms, function(form) {
+            form.addEventListener('submit', function(event) {
+                if (form.checkValidity() === false) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                }
+                form.classList.add('was-validated');
+            }, false);
+        });
+    }, false);
+})();
+
+
+
+$(document).ready(function() {
+    $('#profissao_autocomplete').select2({
+        theme: 'bootstrap-5',
+        placeholder: "Digite para buscar profissões...",
+        minimumInputLength: 2,
+        width: '100%',
+        ajax: {
+            url: "{{ url_for('authentication_blueprint.profissao_autocomplete') }}",
+            dataType: 'json',
+            delay: 250,
+            data: function(params) {
+                return {
+                    q: params.term
+                };
+            },
+            processResults: function(data) {
+                return {
+                    results: data.results
+                };
+            },
+            cache: true
+        }
+    }).on('select2:select', function(e) {
+        $('#profissao_id').val(e.params.data.id);
+    });
+
+    // Configuração inicial se já houver valor
+    {% if profissao_nome %}
+        var option = new Option("{{ profissao_nome }}", "{{ form.profissao_id.data }}", true, true);
+        $('#profissao_autocomplete').append(option).trigger('change');
+    {% endif %}
+});
+
+
+</script>
+{% endblock %}

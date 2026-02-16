@@ -1,0 +1,204 @@
+{% set title='Invoice Detail' %}
+
+{% extends "layouts/vertical.html" %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <!-- Invoice Logo-->
+                    <div class="d-flex align-items-start justify-content-between mb-4">
+                        <div>
+                            <img src="{{ config.ASSETS_ROOT }}/images/logo-dark.png" alt="dark logo" height="24">
+                        </div>
+                        <div class="text-end">
+                            <span class="badge bg-success-subtle text-success px-1 fs-12 mb-3">Paid</span>
+                            <h3 class="m-0 fw-bolder fs-20">Invoice: #INV7896</h3>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-4">
+                            <div class="mb-4">
+                                <h5 class="fw-bold pb-1 mb-2 fs-14"> Invoice From : </h5>
+                                <h6 class="fs-14 mb-2">Chris Keller</h6>
+                                <h6 class="fs-14 text-muted mb-2 lh-base">1055 Station Street Fremont,
+                                    <br/> CA - 94539
+                                </h6>
+                                <h6 class="fs-14 text-muted mb-0">Phone: 510-875-0005</h6>
+                            </div>
+                            <div>
+                                <h5 class="fw-bold fs-14"> Invoice Date : </h5>
+                                <h6 class="fs-14 text-muted">12 Apr 2024</h6>
+                            </div>
+                        </div>
+
+                        <div class="col-4">
+                            <div class="mb-4">
+                                <h5 class="fw-bold pb-1 mb-2 fs-14"> Bill To : </h5>
+                                <h6 class="fs-14 mb-2">Lucian Obrien</h6>
+                                <h6 class="fs-14 text-muted mb-2 lh-base">1147 Rohan Drive Suite,
+                                    <br/>Burlington, VT / 82021
+                                </h6>
+                                <h6 class="fs-14 text-muted mb-0">Phone: 904-966-2836</h6>
+                            </div>
+                            <div>
+                                <h5 class="fw-bold fs-14"> Due Date : </h5>
+                                <h6 class="fs-14 text-muted">28 Apr 2024</h6>
+                            </div>
+                        </div>
+
+                        <div class="col-4 text-end">
+                            <img src="{{ config.ASSETS_ROOT }}/images/png/qr-code.png" alt="qr-code-image" height="100">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-4">
+                    <div class="table-responsive">
+                        <table class="table text-center table-nowrap align-middle mb-0">
+                            <thead>
+                            <tr class="bg-light bg-opacity-50">
+                                <th class="border-0" scope="col" style="width: 50px;">#</th>
+                                <th class="text-start border-0" scope="col">Product Details</th>
+                                <th class="border-0" scope="col">Quantity</th>
+                                <th class="border-0" scope="col">Unit price</th>
+                                <th class="text-end border-0" scope="col" class="text-end">Amount</th>
+                            </tr>
+                            </thead>
+                            <tbody id="products-list">
+                            <tr>
+                                <th scope="row">01</th>
+                                <td class="text-start">
+                                    <div class="d-flex align-items-center gap-2">
+                                        <iconify-icon icon="logos:react" class="fs-22"></iconify-icon>
+                                        <div>
+                                            <span class="fw-medium">React Development</span>
+                                            <p class="text-muted mb-0">(Advance payment for 25 hours)
+                                            </p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>25</td>
+                                <td>$40.00</td>
+                                <td class="text-end">$1000.00</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">02</th>
+                                <td class="text-start">
+                                    <div class="d-flex align-items-center gap-2">
+                                        <iconify-icon icon="logos:openai-icon"
+                                                      class="fs-22"></iconify-icon>
+                                        <div>
+                                            <span class="fw-medium">OpenAI Support</span>
+                                            <p class="text-muted mb-0">(Small help for bug fixes)</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>01</td>
+                                <td>$200.00</td>
+                                <td class="text-end">$200.00</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">03</th>
+                                <td class="text-start">
+                                    <div class="d-flex align-items-center gap-2">
+                                        <iconify-icon icon="logos:apple-app-store"
+                                                      class="fs-22"></iconify-icon>
+                                        <div>
+                                            <span class="fw-medium">Custom App Development - iOS</span>
+                                            <p class="text-muted mb-0">(Phase 1 payment)</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>01</td>
+                                <td>$1200.00</td>
+                                <td class="text-end">$1200.00</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">04</th>
+                                <td class="text-start">
+                                    <div class="d-flex align-items-center gap-2">
+                                        <iconify-icon icon="logos:digital-ocean-icon"
+                                                      class="fs-22"></iconify-icon>
+                                        <div>
+                                            <span class="fw-medium">Digital Ocean Server Setup</span>
+                                            <p class="text-muted mb-0">(Fix amount)</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>01</td>
+                                <td>$199.00</td>
+                                <td class="text-end">$199.00</td>
+                            </tr>
+                            </tbody>
+                        </table><!--end table-->
+                    </div>
+                    <div>
+                        <table class="table table-nowrap align-middle mb-0 ms-auto" style="width:335px">
+                            <tbody>
+                            <tr>
+                                <td class="fw-medium">Subtotal</td>
+                                <td class="text-end">$2,599.00</td>
+                            </tr>
+                            <tr>
+                                <td class="fw-medium">Shipping <small class="text-muted">(Free)</small>
+                                </td>
+                                <td class="text-end">-</td>
+                            </tr>
+                            <tr>
+                                <td class="fw-medium">Discount <small class="text-muted">(10%)</small>
+                                </td>
+                                <td class="text-end">-$259.90</td>
+                            </tr>
+                            <tr>
+                                <td class="fw-medium">Tax <small class="text-muted">(5%)</small></td>
+                                <td class="text-end">$116.95</td>
+                            </tr>
+                            <tr class="border-top border-top-dashed fs-16">
+                                <td class="fw-bold">Total Amount</td>
+                                <td class="fw-bold text-end">$2456.05</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <!--end table-->
+                    </div>
+                </div>
+
+                <div class="card-body">
+                    <div class="bg-body p-2 rounded-2 mt-4">
+                        <p class="mb-0"><span class="fs-12 fw-bold text-uppercase">Note : </span>Payment for
+                            all accounts is due within 7 days from the date of invoice receipt. Payments can
+                            be made via cheque, credit card, or direct online payment. Failure to settle the
+                            account within 7 days will result in the agreed quoted fee, as noted above,
+                            being charged against the credit details provided as confirmation of the work
+                            undertaken.</p>
+                    </div>
+
+                    <div class="mt-4">
+                        <p class="mb-2 pb-2"><b>Congratulations on your recent purchase!</b> It has been our
+                            pleasure to serve you, and we hope we see you again soon.</p>
+
+                        <div class="d-inline-block">
+                            <img src="{{ config.ASSETS_ROOT }}/images/png/signature.png" alt="signature" height="32">
+                            <h5 class="mb-0 mt-2">Authorized Sign</h5>
+                        </div>
+                    </div>
+                </div> <!-- end card-body-->
+            </div>
+
+            <div class="d-print-none mb-5">
+                <div class="d-flex justify-content-center gap-2">
+                    <a href="javascript:window.print()" class="btn btn-primary"><i
+                            class="ti ti-printer me-1"></i> Print</a>
+                    <a href="javascript: void(0);" class="btn btn-secondary"><i class="ti ti-send me-1"></i>
+                        Send</a>
+                    <a href="javascript: void(0);" class="btn btn-info"><i class="ti ti-download me-1"></i>
+                        Download</a>
+                </div>
+            </div>
+            <!-- end buttons -->
+        </div>
+    </div>
+{% endblock %}
